@@ -6,7 +6,7 @@
 /*   By: bvelonja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 02:32:40 by bvelonja          #+#    #+#             */
-/*   Updated: 2024/10/13 02:52:33 by bvelonja         ###   ########.fr       */
+/*   Updated: 2024/10/13 03:21:42 by bvelonja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,27 @@ int	solve_puzzle(int grid[4][4], int position)
 	}
 	grid[i][j] == 0;
 	return (0);
+}
+
+int	print_solution(int grid[4][4])
+{
+	int	i;
+	int	j;
+	int	nbr;
+
+	j = 0;
+	while (j < 4)
+	{
+		i = 0;
+		while (i < 4)
+		{
+			nbr = grid[i][j] + '0';
+			write(1, &nbr, 1);
+			write(1, "  ", 2);
+			if (i == 3)
+				write(1, "\n", 1);
+			i ++;
+		}
+		j ++;
+	}
 }
